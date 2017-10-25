@@ -1,0 +1,15 @@
+language: bash
+services: docker
+env:
+  - VERSION=jessie
+  - VERSION=stretch
+before_script:
+- env | sort
+- cd "$VERSION"
+- image="silvervue/debian:$VERSION"
+script:
+- travis_retry docker build -t "$image" .
+after_script:
+- docker images
+after_success:
+- docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD"; docker push "$image"
