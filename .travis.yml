@@ -1,8 +1,11 @@
 language: bash
 services: docker
 env:
-  - VERSION=jessie
-  - VERSION=stretch
+  - VERSION=5.11.1
+  - VERSION=5.12.1
+  - VERSION=6.11.0
+  - VERSION=8.1.3
+  - VERSION=8.8.0
 before_script:
 - env | sort
 - cd "$VERSION"
@@ -12,4 +15,7 @@ script:
 after_script:
 - docker images
 after_success:
-- docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD"; docker push "$image"
+- if [ "$TRAVIS_BRANCH" == "master" ]; then
+  docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASSWORD";
+  docker push "$image";
+  fi
