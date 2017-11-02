@@ -6,6 +6,7 @@ env:
   - VERSION=6.11.0
   - VERSION=8.1.3
   - VERSION=8.8.0
+  - VERSION=8.9.0
 before_script:
 - env | sort
 - cd "$VERSION"
