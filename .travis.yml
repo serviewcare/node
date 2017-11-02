@@ -10,7 +10,7 @@ env:
 before_script:
 - env | sort
 - cd "$VERSION"
-- image="silvervue/debian:$VERSION"
+- image="silvervue/node:$VERSION"
 script:
 - travis_retry docker build -t "$image" .
 after_script:
