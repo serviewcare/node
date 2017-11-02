@@ -7,6 +7,10 @@ Current Build Status
 
 keeping the containers up to date with dockerfiles that build the default node containers
 
+## 8.9.0
+
+Current LTS for node.js
+
 ## 8.8.0
 
 most current version of node.js
