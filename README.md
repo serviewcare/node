@@ -6,6 +6,12 @@ Current Build Status
 ![alt text](https://travis-ci.org/serviewcare/node.svg?branch=development "TravisCI Build Status") master branch
 
 keeping the containers up to date with dockerfiles that build the default node containers
+## Note for failing builds
+
+If Travis-CI is failing for new builds, check the node.js repository
+## 8.9.0
+
+Current LTS for node.js
 
 ## 8.8.0
 
