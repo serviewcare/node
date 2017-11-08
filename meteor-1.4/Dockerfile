@@ -40,7 +40,7 @@ RUN curl "https://install.meteor.com/?release=1.4.1.1" | sh
 
 USER root
 
-RUN cp "/home/node/.meteor/packages/meteor-tool/1.4.1_1/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor && \
+RUN cp "/home/bamboo/.meteor/packages/meteor-tool/1.4.1_1/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor && \
     mkdir /app && chown -R bamboo:bamboo /app
 
 USER bamboo
