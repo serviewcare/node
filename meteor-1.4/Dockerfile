@@ -31,7 +31,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN groupadd -r bamboo -u 1001 && \
+RUN groupadd -r bamboo -g 1001 && \
     useradd -m -u 1001 -s /bin/bash -g bamboo bamboo
 
 USER bamboo
