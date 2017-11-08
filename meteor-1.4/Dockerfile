@@ -31,16 +31,16 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN groupadd -r node && \
-    useradd -m -s /bin/bash -g node node
+RUN groupadd -r bamboo && \
+    useradd -m -s /bin/bash -g bamboo bamboo
 
-USER node
+USER bamboo
 
 RUN curl "https://install.meteor.com/?release=1.4.1.1" | sh
 
 USER root
 
 RUN cp "/home/node/.meteor/packages/meteor-tool/1.4.1_1/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor && \
-    mkdir /app && chown -R node:node /app
+    mkdir /app && chown -R bamboo:bamboo /app
 
-USER node
+USER bamboo
