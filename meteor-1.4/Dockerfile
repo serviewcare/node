@@ -1,5 +1,7 @@
 FROM silvervue/debian:jessie
 
+RUN apt update && apt install -y chromium xvfb
+
 # 0034A06D9D9B0064CE8ADF6BF1747F4AD2306D93 \ removed 10/25/17 not found in the repo
 # gpg keys listed at https://github.com/nodejs/node
 # the keys are in order they show in github
